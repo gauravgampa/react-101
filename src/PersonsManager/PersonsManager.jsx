@@ -1,9 +1,8 @@
-import './PersonsManager.css';
-
 import React, { Component } from 'react';
 
 import UserInput from '../UserInput/UserInput.jsx';
 import UserOutput from '../UserOutput/UserOutput.jsx';
+import styles from './PersonsManager.module.css';
 
 export default class PersonsManager extends Component {
     state = {
@@ -35,7 +34,7 @@ export default class PersonsManager extends Component {
             <div>
                 {this.state.persons.map((person, index) => {
                     return (
-                        <div className="Person" key={person.id}>
+                        <div className={styles.Person} key={person.id}>
                             <UserInput 
                             name={person.name}
                             handleChange={(event) => this.nameChangeHandler(event, person.id)}/>
