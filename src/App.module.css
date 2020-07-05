@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.ComponentCard{
+  padding-top: 20px;
+}
+
+.App button{
+  padding: 10px;
+  border: 1px solid blue;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+
+.App button:hover {
+  color: black;
+  background-color: salmon;
+}
+
+.App button.Active{
+  background-color: green;
+}
+
+.App button.Active:hover {
+  background-color: lightgreen;
+}
