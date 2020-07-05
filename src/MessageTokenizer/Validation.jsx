@@ -1,10 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Paragraph = styled.p`
+    color: ${props => props.warn && 'red'};
+`;
 
 const Validation = ({length}) => {
-    const message = 
-        length > 0 ? (length > 4 ? "Text long enough" : "Text too short") : 'Enter some Text';
+    let message = 'Enter some Text';
+    let warn = false;
+    if(length > 4){
+        message = 'Text long enough';        
+    }
+    else if(length>1){
+        message = 'Text too short';
+        warn = true;
+    }
+
     return (
-        <p>{message}</p>
+        <Paragraph warn={warn}>{message}</Paragraph>
     );
 }
 

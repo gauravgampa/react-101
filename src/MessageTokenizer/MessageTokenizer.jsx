@@ -1,9 +1,19 @@
-import './MessageTokenizer.css';
-
 import React, { Component } from 'react';
 
 import Char from './Char';
 import Validation from './Validation';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    width: 60%;
+    margin: auto;
+    border: 1px solid black;
+    margin-top: 15px;
+    padding: 5px;
+    @media (max-width: 450px) {
+        width: 450px;
+    }
+`;
 
 export default class MessageTokenizer extends Component {
     state = {
@@ -27,7 +37,7 @@ export default class MessageTokenizer extends Component {
         const charList = [...this.state.message];
         const messageLength = this.state.message.length || 0;
         return (
-            <div className="container-assignment-2">
+            <Container>
                 <input value={this.state.message} onChange={this.handleMessageChange} />
                 <Validation length={messageLength}/>
                 {charList.map((ch, index)=>{
@@ -38,7 +48,7 @@ export default class MessageTokenizer extends Component {
                             handleClick={() => this.removeCharacterHandler(charList, index)}/>)
                 })}                
                 <p>length of input: {messageLength}</p>
-            </div>
+            </Container>
         )
     }
 }
