@@ -2,14 +2,14 @@ import './App.css';
 
 import React, { Component } from 'react'
 
-import Assignment2 from './Assignment2/Assignment2.jsx';
+import MessageTokenizer from './MessageTokenizer/MessageTokenizer.jsx';
 import PersonsManager from './PersonsManager/PersonsManager.jsx';
 
 export default class App extends Component {
   state = {
     components: [
       {name: 'Toggle Persons Manager', show: false},
-      {name: 'Toggle Assignment - 2', show: false}
+      {name: 'Message Tokenizer', show: false}
     ]
   }
 
@@ -34,8 +34,8 @@ export default class App extends Component {
               case 'Toggle Persons Manager':
                 componentToShow = <PersonsManager />;
                 break;
-              case 'Toggle Assignment - 2':
-                componentToShow = <Assignment2 />;
+              case 'Message Tokenizer':
+                componentToShow = <MessageTokenizer />;
                 break;
               default:
                 componentToShow = null;
